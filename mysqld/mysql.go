@@ -2,6 +2,8 @@ package mysqld
 
 import (
 	"database/sql"
+	"fmt"
+	"gin/config"
 	_"log"
 )
 
@@ -9,7 +11,14 @@ var Db *sql.DB
 
 func DbConnect(){
 	var err error
-	Db, err = sql.Open("mysql", "root:root@tcp(127.0.0.1:3306)/gogin?parseTime=true")
+	username :=config.ConfSet.Database.UserName
+	password :=config.ConfSet.Database.Password
+	host :=config.ConfSet.Database.Host
+	port :=fmt.Sprintf("%d",config.ConfSet.Database.Port)
+
+	dataSourceName :=username+":"+password+"@tcp("+host+":"+port+")/gogin?parseTime=true"
+
+	Db, err = sql.Open("mysql", dataSourceName)
 	if err != nil{
 		//log.Fatalln(err)
 	}

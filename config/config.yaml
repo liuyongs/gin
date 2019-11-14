@@ -1,0 +1,9 @@
+database:
+  host: 127.0.0.1
+  username: root
+  password: root
+redis:
+  host: 127.0.0.1
+  port: 6379
+  password:
+  db: 13

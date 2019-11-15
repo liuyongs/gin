@@ -8,6 +8,7 @@ import (
 
 
 func main() {
+
 	//启动配置文件
 	bootstrap.Bootstrap()
 

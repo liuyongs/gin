@@ -14,3 +14,7 @@ go get -v github.com/go-sql-driver/mysql
 
 
 go get -v github.com/sirupsen/logrus
+
+go get github.com/mongodb/mongo-go-driver
+
+go get -v github.com/olivere/elastic
